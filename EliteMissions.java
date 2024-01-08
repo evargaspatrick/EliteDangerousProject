@@ -10,23 +10,105 @@ public class EliteMissions {
 	
 	public static void main(String[] args) {
 	
-	Scanner scanner = new Scanner(System.in);
-	assasination();
+		
+	courier();
 	//This class contains all jobs and their aspects
 	//Includes their pay ranges and their rewards, and possibly job descriptions
+	
 	}
+	static Scanner scanner = new Scanner(System.in);
 	public static void courier() {
-	String job = "Courier";
-	int payout = 100000;
-	String[] mssnobjs = {"Units" + "" + ""};
-	System.out.println("You have chosen a" + job + "mission.");
+		
+	int payout1 = 30000;
+	int payout2 = 50000;
+	int payout3 = 70000;
+	int payout4 = 120000;
+	int itemquant = random.nextInt(12);
+	String[] courierItems1 = {
+            "Envelopes", "Documents", "Parcels", "Packages", "Letters",
+            "Legal Papers", "Medical Supplies", "Prescription Medication", "Laboratory Samples",
+            "Electronics"
+        };
+        String[] courierItems2 = {
+            "Clothing and Apparel", "Books and Magazines", "Personal Care Products",
+            "Cosmetics", "Jewelry", "Artwork", "Musical Instruments", "Flowers and Gifts",
+            "Food and Beverages", "Pet Supplies", "Cash and Valuables", "Pharmaceuticals"
+        };
+        String[] courierItems3 = {
+            "Hazardous Materials", "Firearms and Ammunition", "Illegal Drugs", "Stolen Goods",
+            "Counterfeit Merchandise", "Confidential Documents", "Classified Information", "Precious Metals", "Antiques"
+        };
+        String[] courierItems4 = {
+            "Rare Collectibles", "Explosives", "Fake IDs and Passports", "Pirated Media",
+            "Endangered Species", "Unmarked Packages", "Suspicious Packages", "Radioactive Materials",
+            "Biological Samples"
+        };
+
+        int randomArrayIndex = random.nextInt(4); 
+
+        String[] selectedArray;
+        int pay;
+        switch (randomArrayIndex) {
+            case 0:
+                selectedArray = courierItems1;
+                pay = payout1 * itemquant;
+                break;
+            case 1:
+                selectedArray = courierItems2;
+                pay = payout2 * itemquant;
+                break;
+            case 2:
+                selectedArray = courierItems3;
+                pay = payout3 * itemquant;
+                break;
+            case 3:
+                selectedArray = courierItems4;
+                pay = payout4 * itemquant;
+                break;
+            default:
+                selectedArray = courierItems1; // Defaults back to courierItems1
+                pay = payout1 * itemquant;
+                break;
+        }
+     
+     String formattedPayout = df.format(pay);
+	 String jobitem = (selectedArray[random.nextInt(selectedArray.length)]);
+	
+	System.out.println("You have chosen a courier mission.");
+	System.out.println("This run will require you to move " + itemquant + " units of" + " " + jobitem);
+	System.out.println("For your professionalism you will be compensated " + formattedPayout);
 	}
+	
 	public static void supply() {
-	String job = "Supply";
-	String[] mssnobjs = {};
-		System.out.println("You have chosen a" + job + "mission.");
+	String[] supplyObj = {"Fruits & Vegetables","Spices and Herbs", "Fresh Meat", "Seafood", "Dairy Products", "Baked Goods", "Snacks", "Beverages", 
+			"Canned Goods", "Frozen Foods", "Household essentials", "Kitchenware", "Utensils", "Cookware", "Small Applications", "Clothing and Apparel", 
+			"Footwear", "Handicrafts", "Jewelry", "Flowers and plants", "Electronics", "Office Supplies", "POWs", "Slaves", "Prisoners", "Suspicious goods",
+			 "Illicit Goods", "Safety Equipment", "Air Compressors", "Protective Clothing"};
+	
+	int quantity = random.nextInt(10,100); // Quantity of the items
+	int price = random.nextInt(20000,180000); // The possible price of the items
+	int payment = price * quantity; // The calculation for the total sum of the supply run
+	
+	String formattedPayout = df.format(payment);
+	String supplyobjct = supplyObj [random.nextInt(supplyObj.length)];
+	System.out.println("You have chosen a supply mission.");
+	System.out.println("This will require you to move " + quantity + " crates of " + supplyobjct + ".");
+	System.out.println("Your payment is based on current market trends, this job is worth: " + formattedPayout + " credits.");
+	System.out.println("Do you want to take on this supply run?");
+	System.out.print("Y or N: ");
+	String answer = scanner.nextLine();
+	
+	if (answer.equalsIgnoreCase("Y")) {
+		System.out.println("This mission has been accepted");
+		System.out.println("Payment will be received upon delivery completetion and arrival.");
+		System.out.println("Good luck on those routes cmdr!");
+	} else {
+		System.out.print("This mission has been rejected.");
 	}
-	public static void assasination() {
+	
+	}
+	
+	public static void assassination() {
 	String job = "Assasination";
 	String[] threat_lvl = {"Weak", "Low", "Easy", "Strong", "Difficult", "Hard", "Dangerous", "Deadly", "Lethal", "Impossible"};
 	int guards = random.nextInt(12);
@@ -45,7 +127,9 @@ public class EliteMissions {
 		    "Janice De Lerice", "Merry Le Carie", "Tracy Mc Grady", "Lima Jestima", "Parish Lentonknov",
 		    "Margaret forthwith", "Dedra Cunningham"};
 		
-		int weakX = 35000;
+		// Difficulty pay multipliers
+	
+		int weakX = 35000; 
 		int lowX = 43000;
 		int easyX = 50000;
 		int strongX = 60000;
@@ -88,7 +172,15 @@ public class EliteMissions {
 		System.out.println("Reports say " + target + " has " + guards + " guards.");
 		System.out.println("They are considered threat level: " + Threat);
 		System.out.println("Due to " + target + "'s" + " threat level, your compensation will be " + formattedPayout + " credits.");
-		System.out.println("Do you accept?: Y/N");
+		System.out.print("Do you accept? Y or N: ");
+		String answers = scanner.nextLine();
+		
+		if (answers.equalsIgnoreCase("Y")) {
+			System.out.println("This job has been accepted.");
+			System.out.println("Payment will be received upon mission completion, good hunting cmdr.");
+		} else {
+			System.out.println("This job has been rejected");
+		}
 	}
 	
 	public static void passenger() {
@@ -124,6 +216,16 @@ public class EliteMissions {
 		System.out.println("This passenger mission will require the transportation of " + pass_count + " people");
 		System.out.println("Your passenger travel distance is: " + distance);
 		System.out.println("Your payout is: " + formattedPayout + " credits");
+		System.out.print("Do you accept this mission Y or N?: ");
+		String answers = scanner.nextLine();
+		System.out.println("The safe arrival of all passengers will determine your total compensation cmdr, safe travels. o7");
+		
+		if (answers.equalsIgnoreCase("Y")) {
+			System.out.println();
+		} else {
+			System.out.println("This job has been rejected");
+		}
+		
 		
 	}
 	
@@ -190,8 +292,16 @@ public class EliteMissions {
 	    System.out.println("This missions diffulty is: " + missiondiff);
 		System.out.println("You have to eliminate: " + trgtcount + " targets.");
 		System.out.println("This job will pay: " + formattedPayout + " credits.");
-		System.out.println("Do you accept?: Y/N");
-;	}
+		System.out.print("Do you accept Y or N: ");
+		String answer = scanner.nextLine();
+		
+		if (answer.equalsIgnoreCase("Y")) {
+			System.out.println("This job has been accepted.");
+			System.out.println("They'll be ready cmdr. Good luck. o7");
+		} else {
+			System.out.println("This job has been rejected.");
+		}
+	}
 	
 	public static void theft() {
 	String job = "Theft";
