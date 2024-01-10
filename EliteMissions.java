@@ -9,7 +9,7 @@ public class EliteMissions {
 	static DecimalFormat df = new DecimalFormat("#,###"); // Allows for the proper comma placement for higher numbers
 	
 	public static void main(String[] args) {
-	recovery();
+		
 	//This class contains all jobs and their aspects
 	//Includes their pay ranges and their rewards, and possibly job descriptions
 	}
@@ -64,13 +64,13 @@ public class EliteMissions {
     String formattedPayout = df.format(pay);
 	String jobitem = (selectedArray[random.nextInt(selectedArray.length)]);
 	
-	System.out.println("You have chosen a courier mission.");
+	System.out.println("\n" + "You have chosen a courier mission.");
 	System.out.println("This run will require you to move " + itemquant + " units of" + " " + jobitem);
 	System.out.println("For your professionalism you will be compensated " + formattedPayout);
 	System.out.println("Would you like to accept this mission?");
 	System.out.print("Y or N: ");
 	String answer = scanner.nextLine();
-	
+	System.out.println();
 	if (answer.equalsIgnoreCase("y")) {
 		System.out.println("This job has been accepted.");
 		System.out.println("Credits will be paid once the delivery is finished.");
@@ -92,7 +92,7 @@ public class EliteMissions {
 	
 	String formattedPayout = df.format(payment);
 	String supplyobjct = supplyObj [random.nextInt(supplyObj.length)]; // Randomly selects objects to serve as the job item.
-	System.out.println("You have chosen a supply mission.");
+	System.out.println("\n" + "You have chosen a supply mission.");
 	System.out.println("This will require you to move " + quantity + " crates of " + supplyobjct + ".");
 	System.out.println("Your payment is based on current market trends, this job is worth: " + formattedPayout + " credits.");
 	
@@ -103,7 +103,7 @@ public class EliteMissions {
 	System.out.println("Do you want to take on this supply run?");
 	System.out.print("Y or N: ");
 	String answer = scanner.nextLine();
-	
+	System.out.println();
 	if (answer.equalsIgnoreCase("Y")) {
 		System.out.println("This mission has been accepted");
 		System.out.println("Payment will be received upon delivery completetion and arrival.");
@@ -175,7 +175,7 @@ public class EliteMissions {
 		}
 		
 		String formattedPayout = df.format(payout);
-		System.out.println("You have chosen an " + job + " mission.");
+		System.out.println("\n" + "You have chosen an " + job + " mission.");
 		System.out.println("Your target is: " + target);
 		System.out.println("Reports say " + target + " has " + guards + " guards.");
 		System.out.println("They are considered threat level: " + Threat);
@@ -183,6 +183,7 @@ public class EliteMissions {
 		System.out.println("Do you accept?");
 		System.out.print("Y or N: ");
 		String answers = scanner.nextLine();
+		System.out.println();
 		
 		if (answers.equalsIgnoreCase("Y")) {
 			System.out.println("This job has been accepted.");
@@ -222,13 +223,14 @@ public class EliteMissions {
 		}
 		
 		String formattedPayout = df.format(payout);	
-		System.out.println("You have chosen a " + job + " mission.");
+		System.out.println("\n" + "You have chosen a " + job + " mission.");
 		System.out.println("This passenger mission will require the transportation of " + pass_count + " people");
 		System.out.println("Your passenger travel distance is: " + distance);
 		System.out.println("Your payout is: " + formattedPayout + " credits");
 		System.out.println("Do you accept this mission?");
 		System.out.print("Y or N: ");
 		String answers = scanner.nextLine();
+		System.out.println();
 		System.out.println("The safe arrival of all passengers will determine your total compensation cmdr, safe travels. o7");
 		
 		if (answers.equalsIgnoreCase("Y")) {
@@ -299,7 +301,7 @@ public class EliteMissions {
 	    	payout = p1 + p2;
 	    }
 	    
-	    System.out.println("You have chosen a " + job + " mission.");
+	    System.out.println("\n" + "You have chosen a " + job + " mission.");
 	    String formattedPayout = df.format(payout);
 	    System.out.println("This missions diffulty is: " + missiondiff);
 		System.out.println("You have to eliminate: " + trgtcount + " targets.");
@@ -307,6 +309,7 @@ public class EliteMissions {
 		System.out.println("Do you accept?");
 		System.out.print("Y or N: ");
 		String answer = scanner.nextLine();
+		System.out.println();
 		
 		if (answer.equalsIgnoreCase("Y")) {
 			System.out.println("This job has been accepted.");
@@ -379,13 +382,14 @@ public class EliteMissions {
 	}
 	String jobitem = (selectedArray[random.nextInt(selectedArray.length)]);
 	String formattedPayout = df.format(pay);
-	System.out.println("You have chosen a theft job.");
+	System.out.println("\n" + "You have chosen a theft job.");
 	System.out.println("You think you have swift hands?");
 	System.out.println("This job will require you to take " + itemquant + " " + jobitem);
 	System.out.println("If you succeed, you'll be paid " + formattedPayout + " credits.");
 	System.out.println("You got what it takes?");
 	System.out.print("Y or N: ");
 	String answer = scanner.nextLine();
+	System.out.println();
 	
 	if (answer.equalsIgnoreCase("y")) {
 		System.out.println("A fixer has accpeted the contract.");
@@ -463,12 +467,13 @@ public class EliteMissions {
 	String formattedPayout = df.format(pay);
 	String jobitem = (selectedArray[random.nextInt(selectedArray.length)]);
 	
-	System.out.println("You hava chosen a recovery job.");
+	System.out.println("\n" + "You hava chosen a recovery job.");
 	System.out.println("This job will require you to recover " + itemquant + " " + jobitem + ".");
 	System.out.println("The " + jobitem + " are worth " + formattedPayout + " credits.");
 	System.out.println("Can you handle this or not?");
 	System.out.print("Y or N: ");
 	String answer = scanner.nextLine();
+	System.out.println();
 	
 	if (answer.equalsIgnoreCase("y")) {
 		System.out.println("A fixer has accpeted the contract.");
