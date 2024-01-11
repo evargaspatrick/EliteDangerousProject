@@ -5,19 +5,23 @@ import java.util.random.*;
 public class EliteDangerousIntro {
 
 	public static void main(String[] args) {
-		EliteShips Bruh1 = new EliteShips();
-		Scanner scanner = new Scanner(System.in);
-		Random random = new Random();
 	
 		
-		String[] ship_list = {"Bruh1.adder()", "Bruh1.imperialeagle()", "Bruh1.viperMkIII()", "Bruh1.cobraMkIII()", "Bruh1.viperMkIV()", 
-			"Bruh1.diamondbackscout()", "Bruh1.cobraMkIV()", "Bruh1.type6transporter()", "Bruh1.dolphin()", "Bruh1.diamondbackexplorer()",
-			"Bruh1.imperialcourier()", "Bruh1.keelback()", "Bruh1.aspscout()", "Bruh1.vulture()", "Bruh1.aspexplorer()", "Bruh1.federaldropship()", 
-			"Bruh1.type7transporter()","Bruh1.alliancechieftan()", "Bruh1.federalassaultship()", "Bruh1.imperialclipper()", "Bruh1.alliancecrusader()",
-			"Bruh1.alliancechallenger()","Bruh1.federalgunship()", "Bruh1.kraitphantom()", "Bruh1.kraitMkII()", "Bruh1.orca()", "Bruh1.ferdelance()",
-			"Bruh1.mamba()", "Bruh1.python()","Bruh1.type9heavy()", "Bruh1.belugaliner()", "Bruh1.type10defender()", "Bruh1.anaconda()", "Bruh1.federalcorvette()",
-			"Bruh1.imperialcutter()"};
-
+	}
+		
+		public static void elitestart() {
+		EliteShips ships = new EliteShips();
+		Scanner scanner = new Scanner(System.in);
+		Random random = new Random();
+		
+		String[] ship_list = {"ships.adder()", "ships.imperialeagle()", "ships.viperMkIII()", "ships.cobraMkIII()", "ships.viperMkIV()", 
+			"ships.diamondbackscout()", "ships.cobraMkIV()", "ships.type6transporter()", "ships.dolphin()", "ships.diamondbackexplorer()",
+			"ships.imperialcourier()", "ships.keelback()", "ships.aspscout()", "ships.vulture()", "ships.aspexplorer()", "ships.federaldropship()", 
+			"ships.type7transporter()","ships.alliancechieftan()", "ships.federalassaultship()", "ships.imperialclipper()", "ships.alliancecrusader()",
+			"ships.alliancechallenger()","ships.federalgunship()", "ships.kraitphantom()", "ships.kraitMkII()", "ships.orca()", "ships.ferdelance()",
+			"ships.mamba()", "ships.python()","ships.type9heavy()", "ships.belugaliner()", "ships.type10defender()", "ships.anaconda()", "ships.federalcorvette()",
+			"ships.imperialcutter()"};
+		
 		int A = 0;
 		
 		System.out.print("What is your name commander: ");
@@ -27,120 +31,121 @@ public class EliteDangerousIntro {
 			System.out.println("Commander " + user_name + "\n" + "Your setup is: " + "\n");
 			String player_ship = ship_list[random.nextInt(ship_list.length)];
 			
-			if (player_ship == "Bruh1.SidewinderMkI()") {
-				Bruh1.sidewinderMkI();
+			if (player_ship == "ships.SidewinderMkI()") {
+				ships.sidewinderMkI();
 			}
-			if (player_ship == "Bruh1.eagleMkII()") {
-				Bruh1.eagleMkII();
+			if (player_ship == "ships.eagleMkII()") {
+				ships.eagleMkII();
 			}
-			if (player_ship == "Bruh1.hauler()") {
-				Bruh1.hauler();
+			if (player_ship == "ships.hauler()") {
+				ships.hauler();
 			}
-			if (player_ship == "Bruh1.adder()") {
-				Bruh1.adder();
+			if (player_ship == "ships.adder()") {
+				ships.adder();
 			}
-			if (player_ship == "Bruh1.imperialeagle()") {
-				Bruh1.imperialeagle();
+			if (player_ship == "ships.imperialeagle()") {
+				ships.imperialeagle();
 			}
-			if (player_ship == "Bruh1.viperMkIII()") {
-				Bruh1.viperMkIII();
+			if (player_ship == "ships.viperMkIII()") {
+				ships.viperMkIII();
 			}
 			if (player_ship == "cobraMkIII()") {
-				Bruh1.cobraMkIII();
+				ships.cobraMkIII();
 			}
-			if (player_ship == "Bruh1.viperMkIV()") {
-				Bruh1.viperMkIV();
+			if (player_ship == "ships.viperMkIV()") {
+				ships.viperMkIV();
 			}
-			if (player_ship == "Bruh1.diamondbackscout()") {
-				Bruh1.diamondbackscout();
+			if (player_ship == "ships.diamondbackscout()") {
+				ships.diamondbackscout();
 			}
-			if (player_ship == "Bruh1.cobraMkIV") {
-				Bruh1.cobraMkIV();
+			if (player_ship == "ships.cobraMkIV") {
+				ships.cobraMkIV();
 			}
-			if (player_ship == "Bruh1.type6transporter()") {
-				Bruh1.type6transporter();
+			if (player_ship == "ships.type6transporter()") {
+				ships.type6transporter();
 			}
-			if (player_ship == "Bruh1.dolphin()") {
-				Bruh1.dolphin();
+			if (player_ship == "ships.dolphin()") {
+				ships.dolphin();
 			}
-			if (player_ship == "Bruh1.diamondbackexplorer()") {
-				Bruh1.diamondbackexplorer();
+			if (player_ship == "ships.diamondbackexplorer()") {
+				ships.diamondbackexplorer();
 			}
-			if (player_ship == "Bruh1.imperialcourier()") {
-				Bruh1.imperialcourier();
+			if (player_ship == "ships.imperialcourier()") {
+				ships.imperialcourier();
 			}
-			if (player_ship == "Bruh1.keelback()") {
-				Bruh1.keelback();
+			if (player_ship == "ships.keelback()") {
+				ships.keelback();
 			}
-			if (player_ship == "Bruh1.aspscout()") {
-				Bruh1.aspscout();
+			if (player_ship == "ships.aspscout()") {
+				ships.aspscout();
 			}
-			if (player_ship == "Bruh1.aspexplorer()") {
-				Bruh1.aspexplorer();
+			if (player_ship == "ships.aspexplorer()") {
+				ships.aspexplorer();
 			}
-			if (player_ship == "Bruh1.federaldropship()") {
-				Bruh1.federalgunship();
+			if (player_ship == "ships.federaldropship()") {
+				ships.federalgunship();
 			}
-			if (player_ship == "Bruh1.type7transporter()") {
-				Bruh1.type7transporter();
+			if (player_ship == "ships.type7transporter()") {
+				ships.type7transporter();
 			}
-			if (player_ship == "Bruh1.alliancechieftan()") {
-				Bruh1.alliancechieftan();
+			if (player_ship == "ships.alliancechieftan()") {
+				ships.alliancechieftan();
 			}
-			if (player_ship == "Bruh1.federalassaultship()") {
-				Bruh1.federalassaultship();
+			if (player_ship == "ships.federalassaultship()") {
+				ships.federalassaultship();
 			}
-			if (player_ship == "Bruh1.imperialclipper()") {
-				Bruh1.imperialclipper();
+			if (player_ship == "ships.imperialclipper()") {
+				ships.imperialclipper();
 			}
-			if (player_ship == "Bruh1.alliancecrusader()") {
-				Bruh1.alliancecrusader();
+			if (player_ship == "ships.alliancecrusader()") {
+				ships.alliancecrusader();
 			}
-			if (player_ship == "Bruh1.alliancechallenger()") {
-				Bruh1.alliancechallenger();
+			if (player_ship == "ships.alliancechallenger()") {
+				ships.alliancechallenger();
 			}
-			if (player_ship == "Bruh1.federalgunship()") {
-				Bruh1.federalgunship();
+			if (player_ship == "ships.federalgunship()") {
+				ships.federalgunship();
 			}
-			if (player_ship == "Bruh1.kraitphantom()") {
-				Bruh1.kraitphantom();
+			if (player_ship == "ships.kraitphantom()") {
+				ships.kraitphantom();
 			}
-			if (player_ship == "Bruh1.kraitMkII()") {
-				Bruh1.kraitMkII();
+			if (player_ship == "ships.kraitMkII()") {
+				ships.kraitMkII();
 			}
-			if (player_ship == "Bruh1.orca()") {
-				Bruh1.orca();
+			if (player_ship == "ships.orca()") {
+				ships.orca();
 			}
-			if (player_ship == "Bruh1.ferdelance()") {
-				Bruh1.ferdelance();
+			if (player_ship == "ships.ferdelance()") {
+				ships.ferdelance();
 			}
-			if (player_ship == "Bruh1.mamba()") {
-				Bruh1.mamba();
+			if (player_ship == "ships.mamba()") {
+				ships.mamba();
 			}
-			if (player_ship == "Bruh1.python()") {
-				Bruh1.python();
+			if (player_ship == "ships.python()") {
+				ships.python();
 			}
-			if (player_ship == "Bruh1.type9heavy()") {
-				Bruh1.type9heavy();
+			if (player_ship == "ships.type9heavy()") {
+				ships.type9heavy();
 			}
-			if (player_ship == "Bruh1.belugaliner()") {
-				Bruh1.belugaliner();
+			if (player_ship == "ships.belugaliner()") {
+				ships.belugaliner();
 			}
-			if (player_ship == "Bruh1.type10defender()") {
-				Bruh1.type10defender();
+			if (player_ship == "ships.type10defender()") {
+				ships.type10defender();
 			}
-			if (player_ship == "Bruh1.anaconda()") {
-				Bruh1.anaconda();
+			if (player_ship == "ships.anaconda()") {
+				ships.anaconda();
 			}
-			if (player_ship == "Bruh1.federalcorvette()") {
-				Bruh1.federalcorvette();
+			if (player_ship == "ships.federalcorvette()") {
+				ships.federalcorvette();
 			}
-			if (player_ship == "Bruh1.imperialcutter()") {
-				Bruh1.imperialcutter();
+			if (player_ship == "ships.imperialcutter()") {
+				ships.imperialcutter();
 			}
 			A += 1;
 		
 	
 }
-	}
+	
+}
 }

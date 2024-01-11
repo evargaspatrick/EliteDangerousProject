@@ -10,7 +10,9 @@ public class EliteDangerousGame {
 				// like the pictures for each ship appearing and pictures of their weapons.
 		
 		EliteDangerousIntro intro = new EliteDangerousIntro();
+		intro.elitestart();
 		EliteGui start = new EliteGui();
+		
 	
 	
 	
