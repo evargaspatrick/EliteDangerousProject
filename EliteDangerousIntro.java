@@ -13,7 +13,6 @@ public class EliteDangerousIntro {
 		EliteShips ships = new EliteShips();
 		Scanner scanner = new Scanner(System.in);
 		Random random = new Random();
-		
 		String[] ship_list = {"ships.adder()", "ships.imperialeagle()", "ships.viperMkIII()", "ships.cobraMkIII()", "ships.viperMkIV()", 
 			"ships.diamondbackscout()", "ships.cobraMkIV()", "ships.type6transporter()", "ships.dolphin()", "ships.diamondbackexplorer()",
 			"ships.imperialcourier()", "ships.keelback()", "ships.aspscout()", "ships.vulture()", "ships.aspexplorer()", "ships.federaldropship()", 
@@ -26,9 +25,10 @@ public class EliteDangerousIntro {
 		
 		System.out.print("What is your name commander: ");
 		String user_name = scanner.nextLine();
+		EliteDangerousUserProfile.saveUserInfo(user_name);
 		
 		while (A < 1) {
-			System.out.println("Commander " + user_name + "\n" + "Your setup is: " + "\n");
+			System.out.println("\n" + "Commander " + user_name + "\n" + "Your setup is: " + "\n");
 			String player_ship = ship_list[random.nextInt(ship_list.length)];
 			
 			if (player_ship == "ships.SidewinderMkI()") {
