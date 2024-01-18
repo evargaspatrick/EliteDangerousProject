@@ -5,16 +5,17 @@ import java.util.Scanner;
 
 public class EliteMissions {
 	
+	static EliteGui mssnr = new EliteGui();	
 	static Random random = new Random();
-	static DecimalFormat df = new DecimalFormat("#,###"); // Allows for the proper comma placement for higher numbers
+	static DecimalFormat df = new DecimalFormat("#,###"); // Allows for the proper comma placement for higher numbers, giving proper looking payouts.
+	static Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		
+	
 	//This class contains all jobs and their aspects
-	//Includes their pay ranges and their rewards, and possibly job descriptions
+	//Includes their pay ranges and their rewards, and possibly (in the future) job descriptions.
 	}
 	
-	static Scanner scanner = new Scanner(System.in);
 	public static void courier() {
 		
 	int payout1 = 30000;
@@ -33,6 +34,7 @@ public class EliteMissions {
     String[] courierItems4 = {"Rare Collectibles", "Explosives", "Fake IDs and Passports", "Pirated Media",
 		    "Endangered Species", "Unmarked Packages", "Suspicious Packages", "Radioactive Materials",
 		    "Biological Samples"};
+    
     	int itemquant = random.nextInt(1,12);
         int randomArrayIndex = random.nextInt(4); 
         
@@ -71,20 +73,23 @@ public class EliteMissions {
 	System.out.print("Y or N: ");
 	String answer = scanner.nextLine();
 	System.out.println();
-	if (answer.equalsIgnoreCase("y")) {
-		System.out.println("This job has been accepted.");
-		System.out.println("Credits will be paid once the delivery is finished.");
-		System.out.println("Good luck!");
-	} else {
-		System.out.println("This job has been axed.");
-	}
+	
+		if (answer.equalsIgnoreCase("y")) {
+			System.out.println("This job has been accepted.");
+			System.out.println("Credits will be paid once the delivery is finished.");
+			System.out.println("Good luck!");
+		} else {
+			System.out.println("This job has been axed.");
+			mssnr.mssnslct();
+		}
 	}
 	
 	public static void supply() {
+	
 	String[] supplyObj = {"Fruits & Vegetables","Spices and Herbs", "Fresh Meat", "Seafood", "Dairy Products", "Baked Goods", "Snacks", "Beverages", 
 			"Canned Goods", "Frozen Foods", "Household essentials", "Kitchenware", "Utensils", "Cookware", "Small Applications", "Clothing and Apparel", 
 			"Footwear", "Handicrafts", "Jewelry", "Flowers and plants", "Electronics", "Office Supplies", "POWs", "Slaves", "Prisoners", "Suspicious goods",
-			 "Illicit Goods", "Safety Equipment", "Air Compressors", "Protective Clothing"};
+			"Illicit Goods", "Safety Equipment", "Air Compressors", "Protective Clothing"};
 	
 	int quantity = random.nextInt(10,100); // Quantity of the items
 	int price = random.nextInt(20000,180000); // The possible price of the items
@@ -96,27 +101,30 @@ public class EliteMissions {
 	System.out.println("This will require you to move " + quantity + " crates of " + supplyobjct + ".");
 	System.out.println("Your payment is based on current market trends, this job is worth: " + formattedPayout + " credits.");
 	
-	if (payment >= 3000000) {
-		System.out.println("Wow " + supplyobjct + " is boomin right now!");
-	}
+		if (payment >= 3000000) {
+			System.out.println("Wow " + supplyobjct + " is boomin right now!");
+		}
 	
 	System.out.println("Do you want to take on this supply run?");
 	System.out.print("Y or N: ");
 	String answer = scanner.nextLine();
 	System.out.println();
-	if (answer.equalsIgnoreCase("Y")) {
-		System.out.println("This mission has been accepted");
-		System.out.println("Payment will be received upon delivery completetion and arrival.");
-	} else {
-		System.out.print("This mission has been rejected.");
-	}
 	
-	if (payment <= 3000000) {
-		System.out.println("Wow " + supplyobjct + " is boomin right now");
-	}
+		if (answer.equalsIgnoreCase("Y")) {
+			System.out.println("This mission has been accepted");
+			System.out.println("Payment will be received upon delivery completetion and arrival.");
+		} else {
+			System.out.print("This mission has been rejected.");
+			mssnr.mssnslct();
+		}
+	
+		if (payment <= 3000000) {
+			System.out.println("Wow " + supplyobjct + " is boomin right now");
+		}
 	}
 	
 	public static void assassination() {
+	
 	String job = "Assasination";
 	String[] threat_lvl = {"Weak", "Low", "Easy", "Strong", "Difficult", "Hard", "Dangerous", "Deadly", "Lethal", "Impossible"};
 	int guards = random.nextInt(12);
@@ -174,16 +182,16 @@ public class EliteMissions {
 			payout = impossibleX * (guards + 1);
 		}
 		
-		String formattedPayout = df.format(payout);
-		System.out.println("\n" + "You have chosen an " + job + " mission.");
-		System.out.println("Your target is: " + target);
-		System.out.println("Reports say " + target + " has " + guards + " guards.");
-		System.out.println("They are considered threat level: " + Threat);
-		System.out.println("Due to " + target + "'s" + " threat level, your compensation will be " + formattedPayout + " credits.");
-		System.out.println("Do you accept?");
-		System.out.print("Y or N: ");
-		String answers = scanner.nextLine();
-		System.out.println();
+	String formattedPayout = df.format(payout);
+	System.out.println("\n" + "You have chosen an " + job + " mission.");
+	System.out.println("Your target is: " + target);
+	System.out.println("Reports say " + target + " has " + guards + " guards.");
+	System.out.println("They are considered threat level: " + Threat);
+	System.out.println("Due to " + target + "'s" + " threat level, your compensation will be " + formattedPayout + " credits.");
+	System.out.println("Do you accept?");
+	System.out.print("Y or N: ");
+	String answers = scanner.nextLine();
+	System.out.println();
 		
 		if (answers.equalsIgnoreCase("Y")) {
 			System.out.println("This job has been accepted.");
@@ -191,10 +199,12 @@ public class EliteMissions {
 		} else {
 			System.out.println("This job has been rejected");
 			System.out.println("Too much blood for your hands?");
+			mssnr.mssnslct();
 		}
 	}
 	
 	public static void passenger() {
+		
 		String job = "Passenger";
 		String[] distances = {"close", "nearby", "around the way", "far", "long ways away", "DAMN"};
 		int closeX = 50000;
@@ -207,20 +217,20 @@ public class EliteMissions {
 		int pass_count = random.nextInt(1,32); 
 		String distance = distances [random.nextInt(distances.length)];
 		
-		if (distance == "close") {
-			payout = closeX * pass_count;
-		} else if (distance == "nearby") {
-			payout = nearbyX * pass_count;
-		} else if (distance == "around the way") {
-			payout = aroundX * pass_count;
-		} else if (distance == "far") {
-			payout = farX * pass_count;
-		} else if (distance == "long ways away") {
-			payout = longX * pass_count;
-		} else {
-			distance = "DAMN";
-			payout = damnX * pass_count;
-		}
+			if (distance == "close") {
+				payout = closeX * pass_count;
+			} else if (distance == "nearby") {
+				payout = nearbyX * pass_count;
+			} else if (distance == "around the way") {
+				payout = aroundX * pass_count;
+			} else if (distance == "far") {
+				payout = farX * pass_count;
+			} else if (distance == "long ways away") {
+				payout = longX * pass_count;
+			} else {
+				distance = "DAMN";
+				payout = damnX * pass_count;
+			}
 		
 		String formattedPayout = df.format(payout);	
 		System.out.println("\n" + "You have chosen a " + job + " mission.");
@@ -233,73 +243,73 @@ public class EliteMissions {
 		System.out.println();
 		System.out.println("The safe arrival of all passengers will determine your total compensation cmdr, safe travels. o7");
 		
-		if (answers.equalsIgnoreCase("Y")) {
-			System.out.println();
-		} else {
-			System.out.println("This job has been rejected");
-		}
-		
-		
+			if (answers.equalsIgnoreCase("Y")) {
+				System.out.println();
+			} else {
+				System.out.println("This job has been rejected");
+				mssnr.mssnslct();
+			}
 	}
 	
 	public static void massacre() {
-	    String job = "Massacre";
-	    int payout = 0;
+	    
+		String job = "Massacre";
+	    int payout = 0; // Base payouts.
 	    int easy = 35000;
 	    int medium = 50000;
 	    int high = 65000;
 	    int dangerous = 80000;
 	    int deadly = 95000;
 	    int trgtcount = random.nextInt(124);
-	    double easyX = 0.03125;
+	    double easyX = 0.03125; // Pay multipliers
 	    double mediumX = 0.06257;
 	    double highX = 0.0125;
 	    double dangerousX = 0.02517;
-	    double deadlyX = 0.0573;
-	    
+	    double deadlyX = 0.0573; 
 	    String missiondiff = "";
-	    if (trgtcount <= 6) {
-	        missiondiff = "Easy";
-	    } else if (trgtcount >= 7 && trgtcount <= 32) {
-	        missiondiff = "Medium";
-	    } else if (trgtcount >= 33 && trgtcount <= 68) {
-	        missiondiff = "High";
-	    } else if (trgtcount >= 69 && trgtcount <= 92) {
-	        missiondiff = "Dangerous";
-	    } else {
-	        missiondiff = "Deadly";
-	    }
-	    if (missiondiff == "Easy") {
-	    	int p1 = 0;
-	    	int p2 = 0;
-	    	p1 = easy * trgtcount;
-	    	p2 = (int) (p1 * easyX);
-	    	payout = p1 + p2;
-	    } else if (missiondiff == "Medium") {
-	    	int p1 = 0;
-	    	int p2 = 0;
-	    	p1 = medium * trgtcount;
-	    	p2 = (int) (p1 * mediumX);
-	    	payout = p1 + p2;
-	    } else if (missiondiff == "High") {
-	    	int p1 = 0;
-	    	int p2 = 0;
-	    	p1 = high * trgtcount;
-	    	p2 = (int) (p1 * highX);
-	    	payout = p1 + p2;
-	    } else if (missiondiff == "Dangerous") {
-	    	int p1 = 0;
-	    	int p2 = 0;
-	    	p1 = dangerous * trgtcount;
-	    	p2 = (int) (p1 * dangerousX);
-	    	payout = p1 + p2;
-	    } else if (missiondiff == "Deadly") {
-	    	int p1 = 0;
-	    	int p2 = 0;
-	    	p1 = deadly * trgtcount;
-	    	p2 = (int) (p1 * deadlyX);
-	    	payout = p1 + p2;
-	    }
+	    
+		    if (trgtcount <= 6) { // Determines mission difficulty and target count.
+		        missiondiff = "Easy";
+		    } else if (trgtcount >= 7 && trgtcount <= 32) {
+		        missiondiff = "Medium";
+		    } else if (trgtcount >= 33 && trgtcount <= 68) {
+		        missiondiff = "High";
+		    } else if (trgtcount >= 69 && trgtcount <= 92) {
+		        missiondiff = "Dangerous";
+		    } else {
+		        missiondiff = "Deadly";
+		    }
+		    if (missiondiff == "Easy") {
+		    	int p1 = 0;
+		    	int p2 = 0;
+		    	p1 = easy * trgtcount;
+		    	p2 = (int) (p1 * easyX);
+		    	payout = p1 + p2;
+		    } else if (missiondiff == "Medium") {
+		    	int p1 = 0;
+		    	int p2 = 0;
+		    	p1 = medium * trgtcount;
+		    	p2 = (int) (p1 * mediumX);
+		    	payout = p1 + p2;
+		    } else if (missiondiff == "High") {
+		    	int p1 = 0;
+		    	int p2 = 0;
+		    	p1 = high * trgtcount;
+		    	p2 = (int) (p1 * highX);
+		    	payout = p1 + p2;
+		    } else if (missiondiff == "Dangerous") {
+		    	int p1 = 0;
+		    	int p2 = 0;
+		    	p1 = dangerous * trgtcount;
+		    	p2 = (int) (p1 * dangerousX);
+		    	payout = p1 + p2;
+		    } else if (missiondiff == "Deadly") {
+		    	int p1 = 0;
+		    	int p2 = 0;
+		    	p1 = deadly * trgtcount;
+		    	p2 = (int) (p1 * deadlyX);
+		    	payout = p1 + p2;
+		    }
 	    
 	    System.out.println("\n" + "You have chosen a " + job + " mission.");
 	    String formattedPayout = df.format(payout);
@@ -311,16 +321,18 @@ public class EliteMissions {
 		String answer = scanner.nextLine();
 		System.out.println();
 		
-		if (answer.equalsIgnoreCase("Y")) {
-			System.out.println("This job has been accepted.");
-			System.out.println("They'll be ready cmdr. Good luck. o7");
-		} else {
-			System.out.println("This job has been rejected.");
-			System.out.println("Too much blood for your hands?");
-		}
+			if (answer.equalsIgnoreCase("Y")) {
+				System.out.println("This job has been accepted.");
+				System.out.println("They'll be ready cmdr. Good luck. o7");
+			} else {
+				System.out.println("This job has been rejected.");
+				System.out.println("Too much blood for your hands?");
+				mssnr.mssnslct();
+			}
 	}
 	
 	public static void theft() {
+	
 	String[] lowtier = {"Cybernetic Implants" ,"Data chips", "Low-grade energy weapons", "VR headsets", "Augmented Reality lenses", 
 			"Holographic Jewelry", "Portable Energy Cells", "Designer Tech cloths", "Genetic Modification Serums", "Antique Tech Relics"};
 			
@@ -352,34 +364,35 @@ public class EliteMissions {
 	double highM = 0.02517;
 	double legendM = 0.0573;
 	
-	switch (randomArrayIndex) {
-		case 0:
-			selectedArray = lowtier;
-			p1 = lowX * lowM;
-			p2 = lowX * itemquant;
-			pay = p1 + p2;
-			break;
-		case 1:
-			selectedArray = midtier;
-			p1 = midX * midM;
-			p2 = midX * itemquant;
-			pay = p1 + p2;
-			break;
-		case 2:
-			selectedArray = hightier;
-			p1 = highX * highM;
-			p2 = highX * itemquant;
-			pay = p1 + p2;
-			break;
-		case 3:
-			selectedArray = legendtier;
-			p1 = legendX * legendM;
-			p2 = legendX * itemquant;
-			pay = p1 + p2;
-			break;
-		case 4:
-			break;
-	}
+		switch (randomArrayIndex) {
+			case 0:
+				selectedArray = lowtier;
+				p1 = lowX * lowM;
+				p2 = lowX * itemquant;
+				pay = p1 + p2;
+				break;
+			case 1:
+				selectedArray = midtier;
+				p1 = midX * midM;
+				p2 = midX * itemquant;
+				pay = p1 + p2;
+				break;
+			case 2:
+				selectedArray = hightier;
+				p1 = highX * highM;
+				p2 = highX * itemquant;
+				pay = p1 + p2;
+				break;
+			case 3:
+				selectedArray = legendtier;
+				p1 = legendX * legendM;
+				p2 = legendX * itemquant;
+				pay = p1 + p2;
+				break;
+			case 4:
+				break;
+		}
+	
 	String jobitem = (selectedArray[random.nextInt(selectedArray.length)]);
 	String formattedPayout = df.format(pay);
 	System.out.println("\n" + "You have chosen a theft job.");
@@ -391,18 +404,17 @@ public class EliteMissions {
 	String answer = scanner.nextLine();
 	System.out.println();
 	
-	if (answer.equalsIgnoreCase("y")) {
-		System.out.println("A fixer has accpeted the contract.");
-		System.out.println("You'll get paid once the job is finished.");
-		System.out.println("Good luck. You'll need it.");
-	} else {
-		System.out.println("Contracts been rejected.");
-		System.out.println("What? Couldn't cut it?");
+		if (answer.equalsIgnoreCase("y")) {
+			System.out.println("A fixer has accpeted the contract.");
+			System.out.println("You'll get paid once the job is finished.");
+			System.out.println("Good luck. You'll need it.");
+		} else {
+			System.out.println("Contracts been rejected.");
+			System.out.println("What? Couldn't cut it?");
+			mssnr.mssnslct();
+		}
 	}
 	
-	
-	
-	}
 	public static void recovery() {
 		
 	int item1X = 75000;
@@ -437,32 +449,32 @@ public class EliteMissions {
     int pay = 0;
     double p1= 0;
     int p2 = 0;
-    switch (randomArrayIndex) {
-        case 0:
-            selectedArray = recovitem1;
-            p1 = item1X * item1M;
-            p2 = item1X * itemquant;
-            pay = (int) p1 + p2; 
-            break;
-        case 1:
-            selectedArray = recovitem2;
-            p1 = item2X * item2M;
-            p2 = item2X * itemquant;
-            pay = (int) p1 + p2; 
-            break;
-        case 2:
-            selectedArray = recovitem3;
-            p1 = item3X * item3M;
-            p2 = item3X * itemquant;
-            pay = (int) p1 + p2; 
-            break;
-        case 3:
-            selectedArray = recovitem4;
-            p1 = item4X * item4M;
-            p2 = item4X * itemquant;
-            pay = (int) p1 + p2; 
-            break;
-    }
+	    switch (randomArrayIndex) {
+	        case 0:
+	            selectedArray = recovitem1;
+	            p1 = item1X * item1M;
+	            p2 = item1X * itemquant;
+	            pay = (int) p1 + p2; 
+	            break;
+	        case 1:
+	            selectedArray = recovitem2;
+	            p1 = item2X * item2M;
+	            p2 = item2X * itemquant;
+	            pay = (int) p1 + p2; 
+	            break;
+	        case 2:
+	            selectedArray = recovitem3;
+	            p1 = item3X * item3M;
+	            p2 = item3X * itemquant;
+	            pay = (int) p1 + p2; 
+	            break;
+	        case 3:
+	            selectedArray = recovitem4;
+	            p1 = item4X * item4M;
+	            p2 = item4X * itemquant;
+	            pay = (int) p1 + p2; 
+	            break;
+	    }
 	
 	String formattedPayout = df.format(pay);
 	String jobitem = (selectedArray[random.nextInt(selectedArray.length)]);
@@ -475,22 +487,30 @@ public class EliteMissions {
 	String answer = scanner.nextLine();
 	System.out.println();
 	
-	if (answer.equalsIgnoreCase("y")) {
-		System.out.println("A fixer has accpeted the contract.");
-		System.out.println("You'll get paid once the job is finished.");
-		System.out.println("Don't mess up...");
-	} else {
-		System.out.println("Shame.. We were counting on you.");
-	}
+		if (answer.equalsIgnoreCase("y")) {
+			System.out.println("A fixer has accpeted the contract.");
+			System.out.println("You'll get paid once the job is finished.");
+			System.out.println("Don't mess up...");
+		} else {
+			System.out.println("Shame.. We were counting on you.");
+			mssnr.mssnslct();
+		}
 	
 	}
 	
 	public static void surfaceops() {
+	
 	String job = "Surfaceops"; // Being ignored now due to how complex and intricate this job is.
+	System.out.println("You have chosen a" + job + "mission.");
+	}
+	
+	public static void liberation() {
+	
+		String job = "liberation"; // Being ignored now due to how complex and intricate this job is.
 		System.out.println("You have chosen a" + job + "mission.");
 	}
-	public static void liberation() {
-	String job = "liberation"; // Being ignored now due to how complex and intricate this job is.
-		System.out.println("You have chosen a" + job + "mission.");
+	
+	public static void mssnquit(){
+		System.out.println("The mission board has been quit out of.");
 	}
 }

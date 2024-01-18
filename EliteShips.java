@@ -7,7 +7,7 @@ static DecimalFormat df = new DecimalFormat("#,###");
 	public static void main(String[] args) {
 	
 		
-	//Ships and their function name
+	//Ships and their method name
 		sidewinderMkI();
 		eagleMkII();
 		hauler();

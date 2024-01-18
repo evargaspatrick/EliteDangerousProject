@@ -25,7 +25,6 @@ public class EliteDangerousIntro {
 		
 		System.out.print("What is your name commander: ");
 		String user_name = scanner.nextLine();
-		EliteDangerousUserProfile.saveUserInfo(user_name);
 		
 		while (A < 1) {
 			System.out.println("\n" + "Commander " + user_name + "\n" + "Your setup is: " + "\n");
